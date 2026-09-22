@@ -1,0 +1,346 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> programa
+Rule 1     programa -> lista_instrucciones
+Rule 2     lista_instrucciones -> lista_instrucciones instruccion
+Rule 3     lista_instrucciones -> instruccion
+Rule 4     instruccion -> declaracion_fuente
+Rule 5     instruccion -> declaracion_operador
+Rule 6     instruccion -> declaracion_sumidero
+Rule 7     instruccion -> declaracion_conectar
+Rule 8     instruccion -> declaracion_simular
+Rule 9     declaracion_fuente -> FUENTE ID
+Rule 10    declaracion_operador -> OPERADOR ID TIEMPO_SERVICIO NUMERO
+Rule 11    declaracion_operador -> OPERADOR ID TIEMPO_SERVICIO NUMERO REPLICAS NUMERO
+Rule 12    declaracion_sumidero -> SUMIDERO ID
+Rule 13    declaracion_conectar -> CONECTAR ID A ID
+Rule 14    declaracion_simular -> SIMULAR NUMERO
+
+Terminals, with rules where they appear
+
+A                    : 13
+CONECTAR             : 13
+FUENTE               : 9
+ID                   : 9 10 11 12 13 13
+NUMERO               : 10 11 11 14
+OPERADOR             : 10 11
+REPLICAS             : 11
+SIMULAR              : 14
+SUMIDERO             : 12
+TIEMPO_SERVICIO      : 10 11
+error                : 
+
+Nonterminals, with rules where they appear
+
+declaracion_conectar : 7
+declaracion_fuente   : 4
+declaracion_operador : 5
+declaracion_simular  : 8
+declaracion_sumidero : 6
+instruccion          : 2 3
+lista_instrucciones  : 1 2
+programa             : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . programa
+    (1) programa -> . lista_instrucciones
+    (2) lista_instrucciones -> . lista_instrucciones instruccion
+    (3) lista_instrucciones -> . instruccion
+    (4) instruccion -> . declaracion_fuente
+    (5) instruccion -> . declaracion_operador
+    (6) instruccion -> . declaracion_sumidero
+    (7) instruccion -> . declaracion_conectar
+    (8) instruccion -> . declaracion_simular
+    (9) declaracion_fuente -> . FUENTE ID
+    (10) declaracion_operador -> . OPERADOR ID TIEMPO_SERVICIO NUMERO
+    (11) declaracion_operador -> . OPERADOR ID TIEMPO_SERVICIO NUMERO REPLICAS NUMERO
+    (12) declaracion_sumidero -> . SUMIDERO ID
+    (13) declaracion_conectar -> . CONECTAR ID A ID
+    (14) declaracion_simular -> . SIMULAR NUMERO
+
+    FUENTE          shift and go to state 9
+    OPERADOR        shift and go to state 10
+    SUMIDERO        shift and go to state 11
+    CONECTAR        shift and go to state 12
+    SIMULAR         shift and go to state 13
+
+    programa                       shift and go to state 1
+    lista_instrucciones            shift and go to state 2
+    instruccion                    shift and go to state 3
+    declaracion_fuente             shift and go to state 4
+    declaracion_operador           shift and go to state 5
+    declaracion_sumidero           shift and go to state 6
+    declaracion_conectar           shift and go to state 7
+    declaracion_simular            shift and go to state 8
+
+state 1
+
+    (0) S' -> programa .
+
+
+
+state 2
+
+    (1) programa -> lista_instrucciones .
+    (2) lista_instrucciones -> lista_instrucciones . instruccion
+    (4) instruccion -> . declaracion_fuente
+    (5) instruccion -> . declaracion_operador
+    (6) instruccion -> . declaracion_sumidero
+    (7) instruccion -> . declaracion_conectar
+    (8) instruccion -> . declaracion_simular
+    (9) declaracion_fuente -> . FUENTE ID
+    (10) declaracion_operador -> . OPERADOR ID TIEMPO_SERVICIO NUMERO
+    (11) declaracion_operador -> . OPERADOR ID TIEMPO_SERVICIO NUMERO REPLICAS NUMERO
+    (12) declaracion_sumidero -> . SUMIDERO ID
+    (13) declaracion_conectar -> . CONECTAR ID A ID
+    (14) declaracion_simular -> . SIMULAR NUMERO
+
+    $end            reduce using rule 1 (programa -> lista_instrucciones .)
+    FUENTE          shift and go to state 9
+    OPERADOR        shift and go to state 10
+    SUMIDERO        shift and go to state 11
+    CONECTAR        shift and go to state 12
+    SIMULAR         shift and go to state 13
+
+    instruccion                    shift and go to state 14
+    declaracion_fuente             shift and go to state 4
+    declaracion_operador           shift and go to state 5
+    declaracion_sumidero           shift and go to state 6
+    declaracion_conectar           shift and go to state 7
+    declaracion_simular            shift and go to state 8
+
+state 3
+
+    (3) lista_instrucciones -> instruccion .
+
+    FUENTE          reduce using rule 3 (lista_instrucciones -> instruccion .)
+    OPERADOR        reduce using rule 3 (lista_instrucciones -> instruccion .)
+    SUMIDERO        reduce using rule 3 (lista_instrucciones -> instruccion .)
+    CONECTAR        reduce using rule 3 (lista_instrucciones -> instruccion .)
+    SIMULAR         reduce using rule 3 (lista_instrucciones -> instruccion .)
+    $end            reduce using rule 3 (lista_instrucciones -> instruccion .)
+
+
+state 4
+
+    (4) instruccion -> declaracion_fuente .
+
+    FUENTE          reduce using rule 4 (instruccion -> declaracion_fuente .)
+    OPERADOR        reduce using rule 4 (instruccion -> declaracion_fuente .)
+    SUMIDERO        reduce using rule 4 (instruccion -> declaracion_fuente .)
+    CONECTAR        reduce using rule 4 (instruccion -> declaracion_fuente .)
+    SIMULAR         reduce using rule 4 (instruccion -> declaracion_fuente .)
+    $end            reduce using rule 4 (instruccion -> declaracion_fuente .)
+
+
+state 5
+
+    (5) instruccion -> declaracion_operador .
+
+    FUENTE          reduce using rule 5 (instruccion -> declaracion_operador .)
+    OPERADOR        reduce using rule 5 (instruccion -> declaracion_operador .)
+    SUMIDERO        reduce using rule 5 (instruccion -> declaracion_operador .)
+    CONECTAR        reduce using rule 5 (instruccion -> declaracion_operador .)
+    SIMULAR         reduce using rule 5 (instruccion -> declaracion_operador .)
+    $end            reduce using rule 5 (instruccion -> declaracion_operador .)
+
+
+state 6
+
+    (6) instruccion -> declaracion_sumidero .
+
+    FUENTE          reduce using rule 6 (instruccion -> declaracion_sumidero .)
+    OPERADOR        reduce using rule 6 (instruccion -> declaracion_sumidero .)
+    SUMIDERO        reduce using rule 6 (instruccion -> declaracion_sumidero .)
+    CONECTAR        reduce using rule 6 (instruccion -> declaracion_sumidero .)
+    SIMULAR         reduce using rule 6 (instruccion -> declaracion_sumidero .)
+    $end            reduce using rule 6 (instruccion -> declaracion_sumidero .)
+
+
+state 7
+
+    (7) instruccion -> declaracion_conectar .
+
+    FUENTE          reduce using rule 7 (instruccion -> declaracion_conectar .)
+    OPERADOR        reduce using rule 7 (instruccion -> declaracion_conectar .)
+    SUMIDERO        reduce using rule 7 (instruccion -> declaracion_conectar .)
+    CONECTAR        reduce using rule 7 (instruccion -> declaracion_conectar .)
+    SIMULAR         reduce using rule 7 (instruccion -> declaracion_conectar .)
+    $end            reduce using rule 7 (instruccion -> declaracion_conectar .)
+
+
+state 8
+
+    (8) instruccion -> declaracion_simular .
+
+    FUENTE          reduce using rule 8 (instruccion -> declaracion_simular .)
+    OPERADOR        reduce using rule 8 (instruccion -> declaracion_simular .)
+    SUMIDERO        reduce using rule 8 (instruccion -> declaracion_simular .)
+    CONECTAR        reduce using rule 8 (instruccion -> declaracion_simular .)
+    SIMULAR         reduce using rule 8 (instruccion -> declaracion_simular .)
+    $end            reduce using rule 8 (instruccion -> declaracion_simular .)
+
+
+state 9
+
+    (9) declaracion_fuente -> FUENTE . ID
+
+    ID              shift and go to state 15
+
+
+state 10
+
+    (10) declaracion_operador -> OPERADOR . ID TIEMPO_SERVICIO NUMERO
+    (11) declaracion_operador -> OPERADOR . ID TIEMPO_SERVICIO NUMERO REPLICAS NUMERO
+
+    ID              shift and go to state 16
+
+
+state 11
+
+    (12) declaracion_sumidero -> SUMIDERO . ID
+
+    ID              shift and go to state 17
+
+
+state 12
+
+    (13) declaracion_conectar -> CONECTAR . ID A ID
+
+    ID              shift and go to state 18
+
+
+state 13
+
+    (14) declaracion_simular -> SIMULAR . NUMERO
+
+    NUMERO          shift and go to state 19
+
+
+state 14
+
+    (2) lista_instrucciones -> lista_instrucciones instruccion .
+
+    FUENTE          reduce using rule 2 (lista_instrucciones -> lista_instrucciones instruccion .)
+    OPERADOR        reduce using rule 2 (lista_instrucciones -> lista_instrucciones instruccion .)
+    SUMIDERO        reduce using rule 2 (lista_instrucciones -> lista_instrucciones instruccion .)
+    CONECTAR        reduce using rule 2 (lista_instrucciones -> lista_instrucciones instruccion .)
+    SIMULAR         reduce using rule 2 (lista_instrucciones -> lista_instrucciones instruccion .)
+    $end            reduce using rule 2 (lista_instrucciones -> lista_instrucciones instruccion .)
+
+
+state 15
+
+    (9) declaracion_fuente -> FUENTE ID .
+
+    FUENTE          reduce using rule 9 (declaracion_fuente -> FUENTE ID .)
+    OPERADOR        reduce using rule 9 (declaracion_fuente -> FUENTE ID .)
+    SUMIDERO        reduce using rule 9 (declaracion_fuente -> FUENTE ID .)
+    CONECTAR        reduce using rule 9 (declaracion_fuente -> FUENTE ID .)
+    SIMULAR         reduce using rule 9 (declaracion_fuente -> FUENTE ID .)
+    $end            reduce using rule 9 (declaracion_fuente -> FUENTE ID .)
+
+
+state 16
+
+    (10) declaracion_operador -> OPERADOR ID . TIEMPO_SERVICIO NUMERO
+    (11) declaracion_operador -> OPERADOR ID . TIEMPO_SERVICIO NUMERO REPLICAS NUMERO
+
+    TIEMPO_SERVICIO shift and go to state 20
+
+
+state 17
+
+    (12) declaracion_sumidero -> SUMIDERO ID .
+
+    FUENTE          reduce using rule 12 (declaracion_sumidero -> SUMIDERO ID .)
+    OPERADOR        reduce using rule 12 (declaracion_sumidero -> SUMIDERO ID .)
+    SUMIDERO        reduce using rule 12 (declaracion_sumidero -> SUMIDERO ID .)
+    CONECTAR        reduce using rule 12 (declaracion_sumidero -> SUMIDERO ID .)
+    SIMULAR         reduce using rule 12 (declaracion_sumidero -> SUMIDERO ID .)
+    $end            reduce using rule 12 (declaracion_sumidero -> SUMIDERO ID .)
+
+
+state 18
+
+    (13) declaracion_conectar -> CONECTAR ID . A ID
+
+    A               shift and go to state 21
+
+
+state 19
+
+    (14) declaracion_simular -> SIMULAR NUMERO .
+
+    FUENTE          reduce using rule 14 (declaracion_simular -> SIMULAR NUMERO .)
+    OPERADOR        reduce using rule 14 (declaracion_simular -> SIMULAR NUMERO .)
+    SUMIDERO        reduce using rule 14 (declaracion_simular -> SIMULAR NUMERO .)
+    CONECTAR        reduce using rule 14 (declaracion_simular -> SIMULAR NUMERO .)
+    SIMULAR         reduce using rule 14 (declaracion_simular -> SIMULAR NUMERO .)
+    $end            reduce using rule 14 (declaracion_simular -> SIMULAR NUMERO .)
+
+
+state 20
+
+    (10) declaracion_operador -> OPERADOR ID TIEMPO_SERVICIO . NUMERO
+    (11) declaracion_operador -> OPERADOR ID TIEMPO_SERVICIO . NUMERO REPLICAS NUMERO
+
+    NUMERO          shift and go to state 22
+
+
+state 21
+
+    (13) declaracion_conectar -> CONECTAR ID A . ID
+
+    ID              shift and go to state 23
+
+
+state 22
+
+    (10) declaracion_operador -> OPERADOR ID TIEMPO_SERVICIO NUMERO .
+    (11) declaracion_operador -> OPERADOR ID TIEMPO_SERVICIO NUMERO . REPLICAS NUMERO
+
+    FUENTE          reduce using rule 10 (declaracion_operador -> OPERADOR ID TIEMPO_SERVICIO NUMERO .)
+    OPERADOR        reduce using rule 10 (declaracion_operador -> OPERADOR ID TIEMPO_SERVICIO NUMERO .)
+    SUMIDERO        reduce using rule 10 (declaracion_operador -> OPERADOR ID TIEMPO_SERVICIO NUMERO .)
+    CONECTAR        reduce using rule 10 (declaracion_operador -> OPERADOR ID TIEMPO_SERVICIO NUMERO .)
+    SIMULAR         reduce using rule 10 (declaracion_operador -> OPERADOR ID TIEMPO_SERVICIO NUMERO .)
+    $end            reduce using rule 10 (declaracion_operador -> OPERADOR ID TIEMPO_SERVICIO NUMERO .)
+    REPLICAS        shift and go to state 24
+
+
+state 23
+
+    (13) declaracion_conectar -> CONECTAR ID A ID .
+
+    FUENTE          reduce using rule 13 (declaracion_conectar -> CONECTAR ID A ID .)
+    OPERADOR        reduce using rule 13 (declaracion_conectar -> CONECTAR ID A ID .)
+    SUMIDERO        reduce using rule 13 (declaracion_conectar -> CONECTAR ID A ID .)
+    CONECTAR        reduce using rule 13 (declaracion_conectar -> CONECTAR ID A ID .)
+    SIMULAR         reduce using rule 13 (declaracion_conectar -> CONECTAR ID A ID .)
+    $end            reduce using rule 13 (declaracion_conectar -> CONECTAR ID A ID .)
+
+
+state 24
+
+    (11) declaracion_operador -> OPERADOR ID TIEMPO_SERVICIO NUMERO REPLICAS . NUMERO
+
+    NUMERO          shift and go to state 25
+
+
+state 25
+
+    (11) declaracion_operador -> OPERADOR ID TIEMPO_SERVICIO NUMERO REPLICAS NUMERO .
+
+    FUENTE          reduce using rule 11 (declaracion_operador -> OPERADOR ID TIEMPO_SERVICIO NUMERO REPLICAS NUMERO .)
+    OPERADOR        reduce using rule 11 (declaracion_operador -> OPERADOR ID TIEMPO_SERVICIO NUMERO REPLICAS NUMERO .)
+    SUMIDERO        reduce using rule 11 (declaracion_operador -> OPERADOR ID TIEMPO_SERVICIO NUMERO REPLICAS NUMERO .)
+    CONECTAR        reduce using rule 11 (declaracion_operador -> OPERADOR ID TIEMPO_SERVICIO NUMERO REPLICAS NUMERO .)
+    SIMULAR         reduce using rule 11 (declaracion_operador -> OPERADOR ID TIEMPO_SERVICIO NUMERO REPLICAS NUMERO .)
+    $end            reduce using rule 11 (declaracion_operador -> OPERADOR ID TIEMPO_SERVICIO NUMERO REPLICAS NUMERO .)
+
