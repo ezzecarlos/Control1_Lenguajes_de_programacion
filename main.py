@@ -1,23 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-main.py — Punto de entrada del intérprete
-============================================
 
-Este archivo no fue pedido explícitamente como parte de los cuatro
-módulos (lexer.py, parser.py, simbolos.py, grafo.py), pero se agrega
-como el "programa" que el enunciado pide construir: es el que
-efectivamente LEE un archivo .dsl, invoca al lexer y al parser para
-construir el AST, arma la Tabla de Símbolos y el Grafo, y ejecuta las
-instrucciones SIMULAR encontradas, imprimiendo la traza de cada evento
-por salida estándar.
-
-Uso:
-    python main.py archivo.dsl
-
-Si el archivo no se indica, se usa por defecto 'ejemplo.dsl' (el mismo
-ejemplo del enunciado), para poder probar rápidamente con:
-    python main.py
-"""
 
 import sys
 
@@ -26,21 +8,17 @@ from parser import parsear, construir_topologia, ErrorSintactico
 from simbolos import ErrorSimbolo
 from grafo import ErrorGrafo
 
-
+#Lee el archivo DSL indicado, lo interpreta por completo y ejecuta todas las instrucciones SIMULAR que contenga, en el orden en que aparecen en el archivo.
 def ejecutar_archivo(ruta):
-    """
-    Lee el archivo DSL indicado, lo interpreta por completo y ejecuta
-    todas las instrucciones SIMULAR que contenga, en el orden en que
-    aparecen en el archivo.
-    """
+    
+    
     with open(ruta, 'r', encoding='utf-8') as f:
         codigo = f.read()
 
     # Fase léxica + sintáctica: produce la lista de nodos AST.
     ast = parsear(codigo)
 
-    # Fase semántica: construye tabla de símbolos y grafo, valida
-    # duplicados, referencias y estructura mínima de la topología.
+    # Fase semántica: construye tabla de símbolos y grafo, valida duplicados, referencias y estructura mínima de la topología.
     tabla, grafo, simulaciones = construir_topologia(ast)
 
     if not simulaciones:
@@ -48,8 +26,7 @@ def ejecutar_archivo(ruta):
               "instrucción SIMULAR; no se generó ninguna traza.")
         return
 
-    # Lógica de Simulación: se ejecuta cada SIMULAR en el orden en que
-    # aparece en el archivo fuente.
+    # Lógica de Simulación: se ejecuta cada SIMULAR en el orden en que aparece en el archivo fuente.
     for cantidad in simulaciones:
         grafo.simular(tabla, cantidad)
 

@@ -1,4 +1,3 @@
-# Makefile para el Intérprete de Topologías DSL en Python
 
 # Variables de entorno
 PYTHON = python
@@ -12,7 +11,6 @@ ARCHIVO ?= ejemplo_invalido.dsl
 # Evita conflictos si existen archivos con estos nombres
 .PHONY: default run clean venv install run-venv
 
-# Si solo escribes "make", se ejecutará "run"
 default: run
 
 # 1. Ejecutar el simulador con el archivo indicado
