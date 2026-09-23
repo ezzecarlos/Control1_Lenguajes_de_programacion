@@ -252,16 +252,7 @@ donde ocurrió (cuando aplica):
 - El AST se mantiene íntegramente en memoria como una lista de
   `dataclasses` de Python; no se genera ningún archivo intermedio.
 - El contenido de las tuplas es sintético/abstracto: no se modela
-  ningún dato real viajando por la topología (tal como se pedía,
-  simular el procesamiento con contenido sintético); lo único que se
-  reporta es la traza de nodos y el tiempo acumulado.
-
-
-
-## 8. Declaracion de uso de IA
-
-- Despues de cargar los archivos de la materia y el control; 
-  Podrias explicar a detalle basandote en los archivos cargados
-  el como realizar el taller, con detalle en que tiene que ir 
-  en cada archivo
-- Podrias explicar a detalle, basandote en los archivos cargados, el como realizar el taller en el archivo "Control 1 - 2026.docx", con detalle en que tiene que ir en cada archivo
+  ningún dato real viajando por la topología, tal como indica el
+  enunciado ("simular el procesamiento de tuplas con contenido
+  sintético"); lo que se reporta es únicamente la traza de nodos y el
+  tiempo acumulado.
