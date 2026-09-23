@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+
 from collections import defaultdict
 
 # Excepción para errores de validación estructural del grafo

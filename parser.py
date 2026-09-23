@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+
 
 
 from dataclasses import dataclass, field
@@ -6,7 +6,7 @@ from typing import List
 
 import ply.yacc as yacc
 
-from lexer import tokens  # noqa: F401  (PLY exige que 'tokens' esté disponible)
+from lexer import tokens 
 from lexer import lexer as _lexer_instance
 from simbolos import TablaSimbolos, Nodo, ErrorSimbolo
 from grafo import Grafo, ErrorGrafo

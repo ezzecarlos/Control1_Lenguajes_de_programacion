@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+
 import ply.lex as lex
 
 #Excepción propia para errores léxicos (caracteres no reconocidos).
